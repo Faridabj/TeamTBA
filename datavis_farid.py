@@ -9,7 +9,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 
 
-df = pd.read_csv("TeamTBA_data_cleaning.csv")
+# df = pd.read_csv("TeamTBA_data_cleaning.csv")
 
 app = dash.Dash(__name__)
 server = app.server
@@ -19,7 +19,8 @@ app.layout = html.Div(
         id='Graph1',
         figure={
             'data': [
-                {'x': df.index, 'y': df.iloc[:,0], 'type': 'line', 'name': 'data'},
+#                 {'x': df.index, 'y': df.iloc[:,0], 'type': 'line', 'name': 'data'},
+                  {'x': [1,2,3], 'y' : [5,6,9] ,'type': 'line', 'name': 'data'}
             ]
         }
     )
