@@ -19,7 +19,6 @@ app.layout = html.Div(
         id='Graph1',
         figure={
             'data': [
-#                 {'x': df.index, 'y': df.iloc[:,0], 'type': 'line', 'name': 'data'},
                   {'x': [1,2,3], 'y' : [5,6,9] ,'type': 'line', 'name': 'data'}
             ]
         }
