@@ -32,8 +32,8 @@ setup:
 	done
 	
 run:
-	${PYTHON} latency_predict.py
+	@${PYTHON} latency_predict.py
 
 # In this context, the *.project pattern means "anything that has the .project extension"
 clean:
-	rm -r *.project
+	@rm -r *.project
