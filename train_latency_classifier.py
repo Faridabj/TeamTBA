@@ -19,6 +19,9 @@ if __name__ == '__main__':
 	  temp = pd.concat([temp, temp2],axis=1)
 
 	X, y = temp.iloc[LAGS - 1:-1], df.shift(-1).iloc[LAGS-1:-1]
+	X.to_csv("train.csv",index=False)
+	y.to_csv("train_targets.csv",index=False)
 	logit = LogisticRegression().fit(X, y > 0)
+	print(",".join(map(str, logit.coef_[0])), logit.intercept_)
 	dump(logit, 'latency_logit.joblib') 
 
