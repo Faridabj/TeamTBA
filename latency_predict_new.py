@@ -11,6 +11,5 @@ if __name__ == '__main__':
 	# Read Data
 	for line in sys.stdin:
 		X_in = np.array([float(i) for i in line.split(",")]).reshape(1, -1)
-		# p = 1 / (1 + np.exp(-(np.dot(X_in, COEFS.T) + 0.11098996)))
-		p2 = ((np.dot(X_in, COEFS.T) + 0.11098996)[0][0] > 0) * 1
-		print(p2)
+		p = 1 / (1 + np.exp(-(np.dot(X_in, COEFS.T) + 0.11098996)))
+		print((p[0][0] > 0.5) * 1)
